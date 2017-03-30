@@ -28,5 +28,17 @@ return [
             'admins' => ['admin']
     ],
         'rbac' => 'dektrium\rbac\RbacWebModule',
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout'=>'left-menu'
+        ]
 ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'hosxp/*',
+            'site/*',
+            'admin/*',      
+        ]
+    ],
 ];
