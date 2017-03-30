@@ -33,12 +33,13 @@ return [
             'layout'=>'left-menu'
         ]
 ],
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            'hosxp/*',
-            'site/*',
-            'admin/*',      
-        ]
-    ],
+//    'as access' => [
+//        'class' => 'mdm\admin\components\AccessControl',
+//        'allowActions' => [
+//            'hosxp/*',
+//            'site/*',
+//            'admin/*', 
+//            'user/*'
+//        ]
+//    ],
 ];
