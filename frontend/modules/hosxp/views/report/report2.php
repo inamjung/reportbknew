@@ -55,7 +55,7 @@ use kartik\widgets\Select2;
             <?php
             $list = ['001'=>'เบาหวาน','002'=>'ความดันสูง'];
             
-                   echo Select2::widget([
+                echo Select2::widget([
                 'name' => 'clinic',
                 'data' => $list,
                 'value' => $clinic,
