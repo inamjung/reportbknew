@@ -3,8 +3,10 @@
 use kartik\grid\GridView;
 use yii\helpers\Html;
 use miloschuman\highcharts\Highcharts;
+
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
+use kartik\widgets\Select2;
 ?>
 
 <?php
@@ -49,6 +51,22 @@ use yii\helpers\Url;
         ]);
         ?>           
     </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <?php
+            $list = ['001'=>'เบาหวาน','002'=>'ความดันสูง'];
+            
+                   echo Select2::widget([
+                'name' => 'clinic',
+                'data' => $list,
+                'value' => $clinic,
+                'size' => Select2::MEDIUM,
+                'options' => ['placeholder' => 'เลือก...'],
+                'pluginOptions' => [
+                    'allowClear' => true
+                ],
+            ]);
+            ?>
+        </div>
     <div class="col-xs-2 col-sm-2 col-md-2">
          <button class='btn btn-danger'>ประมวลผล</button>
     </div>

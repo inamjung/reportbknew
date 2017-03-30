@@ -76,7 +76,8 @@ class ReportController extends Controller {
             JOIN clinic c on c.clinic=cm.clinic
             WHERE cm.refer_register_from_hospcode='11049'
             AND c.hospcode='11049'
-	    and cm.regdate between '$date1' and '$date2'						
+	    and cm.regdate between '$date1' and '$date2'
+            and c.clinic='$clinic'
             GROUP BY c.clinic
             order by total desc")->queryAll();
 
