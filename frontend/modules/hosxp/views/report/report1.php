@@ -2,6 +2,7 @@
 
 use kartik\grid\GridView;
 use yii\helpers\Html;
+use miloschuman\highcharts\Highcharts;
 ?>
 <?php
 
@@ -49,4 +50,28 @@ echo GridView::widget([
         GridView::PDF => []
     ],
 ]);
+?>
+<?php 
+echo Highcharts::widget([
+   'options' => [
+      'title' => ['text' => 'จำนวนผู้ป่วยในคลินิกเรื้อรัง'],
+      'xAxis' => [
+         'categories' => $cname
+      ],
+      'yAxis' => [
+         'title' => ['text' => 'จำนวน']
+      ],
+      'series' => [
+         [
+             'type'=>'column',
+             'data'=>$total,
+             'name'=>'จำนวน',
+             'dataLabels'=>[
+                 'enabled' => true,
+             ]
+         ]
+      ]
+   ]
+]);
+
 ?>
