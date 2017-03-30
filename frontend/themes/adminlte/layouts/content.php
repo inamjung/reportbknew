@@ -31,7 +31,7 @@ use dmstr\widgets\Alert;
     </section>
     <div style="margin-top:120px;">
         
-        <section class="content">
+    <section class="content">
         <?= Alert::widget() ?>
         <?= $content ?>
     </section>
