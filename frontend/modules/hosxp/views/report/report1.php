@@ -42,7 +42,7 @@ echo GridView::widget([
         'heading' => ''
     ],
     'toolbar' => [       
-        '{export}',
+        //'{export}',
         //'{toggleData}'       
     ],
     'exportConfig' => [
