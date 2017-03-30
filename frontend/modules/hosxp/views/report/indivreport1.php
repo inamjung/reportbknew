@@ -1,7 +1,7 @@
 <?php
 
 use kartik\grid\GridView;
-use yii\helpers\Html;
+
 ?>
 <?php
 
@@ -14,18 +14,7 @@ $gridColumns = [
         'attribute'=>'cname',
         
     ],
-    ['attribute'=>'total',
-        'format'=>'raw',
-         'value'=> function($model)use($clinic) {
-                return Html::a(Html::encode($model['total']), [
-                'report/indivreport1', 
-                    'clinic'=>$model['clinic']
-                
-                    ]
-    );
-            },
-        
-    ]
+    ['attribute'=>'hn']
 
         ];
 echo GridView::widget([
@@ -42,7 +31,7 @@ echo GridView::widget([
     ],
     'toolbar' => [       
         '{export}',
-        //'{toggleData}'       
+        '{toggleData}'       
     ],
     'exportConfig' => [
         GridView::EXCEL => [],
