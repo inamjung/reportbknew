@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2017-03-31 13:13:50
+Date: 2017-03-31 16:03:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -214,12 +214,47 @@ INSERT INTO `auth_item` VALUES ('/site/request-password-reset', '2', null, null,
 INSERT INTO `auth_item` VALUES ('/site/reset-password', '2', null, null, null, '1490864688', '1490864688');
 INSERT INTO `auth_item` VALUES ('/site/*', '2', null, null, null, '1490864688', '1490864688');
 INSERT INTO `auth_item` VALUES ('/*', '2', null, null, null, '1490864688', '1490864688');
-INSERT INTO `auth_item` VALUES ('ดูแลระบบแจ้งซ่อม', '2', null, null, null, '1490864766', '1490864766');
-INSERT INTO `auth_item` VALUES ('ผู้ดูแลระบบ', '2', null, null, null, '1490864875', '1490864875');
-INSERT INTO `auth_item` VALUES ('สมาชิก', '2', null, null, null, '1490864910', '1490864910');
+INSERT INTO `auth_item` VALUES ('ดูแลระบบแจ้งซ่อม', '2', null, null, null, '1490864766', '1490950638');
+INSERT INTO `auth_item` VALUES ('ผู้ดูแลระบบ', '2', null, null, null, '1490864875', '1490950571');
+INSERT INTO `auth_item` VALUES ('สมาชิก', '2', null, null, null, '1490864910', '1490950592');
 INSERT INTO `auth_item` VALUES ('administrator', '1', null, null, null, '1490864969', '1490864969');
 INSERT INTO `auth_item` VALUES ('manager', '1', null, null, null, '1490865025', '1490865025');
 INSERT INTO `auth_item` VALUES ('user', '1', null, null, null, '1490865048', '1490865048');
+INSERT INTO `auth_item` VALUES ('/inven/default/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/default/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/view', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/create', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/update', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/delete', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/departments/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/view', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/create', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/update', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/delete', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invendetails/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/indexuser', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/view', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/create', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/update', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/delete', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/report', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/invenmains/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/view', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/create', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/update', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/delete', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/products/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/index', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/view', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/create', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/update', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/delete', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/types/*', '2', null, null, null, '1490950556', '1490950556');
+INSERT INTO `auth_item` VALUES ('/inven/*', '2', null, null, null, '1490950556', '1490950556');
 
 -- ----------------------------
 -- Table structure for auth_item_child
@@ -245,6 +280,9 @@ INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ�
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/hosxp/report/indivreport1');
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/hosxp/report/report1');
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/hosxp/report/report2');
+INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/inven/invenmains/create');
+INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/inven/invenmains/indexuser');
+INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/inven/invenmains/update');
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/site/index');
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/user/security/login');
 INSERT INTO `auth_item_child` VALUES ('ดูแลระบบแจ้งซ่อม', '/user/security/logout');
@@ -326,6 +364,41 @@ INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/hos
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/hosxp/report/indivreport1');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/hosxp/report/report1');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/hosxp/report/report2');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/default/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/default/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/create');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/delete');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/update');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/departments/view');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/create');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/delete');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/update');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invendetails/view');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/create');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/delete');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/indexuser');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/report');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/update');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/invenmains/view');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/create');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/delete');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/update');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/products/view');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/*');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/create');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/delete');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/index');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/update');
+INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/inven/types/view');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/rbac/*');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/rbac/assignment/*');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/rbac/assignment/assign');
@@ -391,6 +464,9 @@ INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/use
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/user/settings/disconnect');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/user/settings/networks');
 INSERT INTO `auth_item_child` VALUES ('ผู้ดูแลระบบ', '/user/settings/profile');
+INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/inven/invenmains/create');
+INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/inven/invenmains/indexuser');
+INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/inven/invenmains/update');
 INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/site/index');
 INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/user/security/login');
 INSERT INTO `auth_item_child` VALUES ('สมาชิก', '/user/security/logout');
@@ -439,13 +515,16 @@ CREATE TABLE `invendetails` (
   `qty` int(11) DEFAULT NULL COMMENT 'จำนวน',
   `remark` varchar(255) DEFAULT NULL COMMENT 'หมายเหตุ',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of invendetails
 -- ----------------------------
 INSERT INTO `invendetails` VALUES ('1', '1', '1', '10', '');
 INSERT INTO `invendetails` VALUES ('2', '1', '2', '5', '');
+INSERT INTO `invendetails` VALUES ('4', '2', '1', '2', '');
+INSERT INTO `invendetails` VALUES ('5', '2', '2', '2', '');
+INSERT INTO `invendetails` VALUES ('6', '2', '3', '2', '');
 
 -- ----------------------------
 -- Table structure for invenmains
@@ -459,12 +538,13 @@ CREATE TABLE `invenmains` (
   `create_at` date DEFAULT NULL COMMENT 'วันที่บันทึก',
   `update_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of invenmains
 -- ----------------------------
 INSERT INTO `invenmains` VALUES ('1', '2017-03-31 00:00:00', '1', null, null, null);
+INSERT INTO `invenmains` VALUES ('2', '2017-03-29 00:00:00', '2', '4', '2017-03-31', null);
 
 -- ----------------------------
 -- Table structure for migration
@@ -606,6 +686,8 @@ CREATE TABLE `user` (
   `flags` int(11) NOT NULL DEFAULT '0',
   `last_login_at` int(11) DEFAULT NULL,
   `status` smallint(6) NOT NULL DEFAULT '10',
+  `department_id` int(11) DEFAULT NULL,
+  `role` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_unique_username` (`username`),
   UNIQUE KEY `user_unique_email` (`email`)
@@ -614,10 +696,10 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', 'admin@localhost.com', '$2y$12$VnY8dk3slz7rC/IN0kvheeyXMUKx0O8aX9lKot3ZVvzpJUgNbgisO', 'zy1nEUWguwfu0gkMFILtkIKLsWtkIA-M', null, null, null, '::1', '1490861913', '1490861913', '0', '1490873323', '10');
-INSERT INTO `user` VALUES ('2', 'manager', 'manager@localhost.com', '$2y$12$b7rm8jnDAGxBS7qWJCcee.oF4v9Ne2QvX4ry2z9Nk.UjpXndwJOYK', 'LSsErX-TXoyxKrRMeIoUYAE5TKMfLDbs', null, null, null, '::1', '1490861946', '1490861946', '0', '1490865233', '10');
-INSERT INTO `user` VALUES ('3', 'editor', 'editor@localhost.com', '$2y$12$a63pv1zyTsug7NYQWbhnhunRfPdwGddEojg/rYZ.t41yirCZnjxUi', '1cwKof3Wq0nm1jF7vXl-dyF6iMPeSbDp', null, null, null, '::1', '1490861964', '1490861964', '0', '1490865194', '10');
-INSERT INTO `user` VALUES ('4', 'user', 'user@localhost.com', '$2y$12$C40sbvZWX9CbEKPfoVTUmerf2g.lWqXlGXEpuM5Rj7EelKhCPUG.m', '-yhX4nTgGnsIUSJUBiEvAF0CFqcUqWbt', null, null, null, '::1', '1490861982', '1490861982', '0', '1490862271', '10');
+INSERT INTO `user` VALUES ('1', 'admin', 'admin@localhost.com', '$2y$12$VnY8dk3slz7rC/IN0kvheeyXMUKx0O8aX9lKot3ZVvzpJUgNbgisO', 'zy1nEUWguwfu0gkMFILtkIKLsWtkIA-M', null, null, null, '::1', '1490861913', '1490861913', '0', '1490949086', '10', '1', '10');
+INSERT INTO `user` VALUES ('2', 'manager', 'manager@localhost.com', '$2y$12$b7rm8jnDAGxBS7qWJCcee.oF4v9Ne2QvX4ry2z9Nk.UjpXndwJOYK', 'LSsErX-TXoyxKrRMeIoUYAE5TKMfLDbs', null, null, null, '::1', '1490861946', '1490861946', '0', '1490865233', '10', '2', '20');
+INSERT INTO `user` VALUES ('3', 'editor', 'editor@localhost.com', '$2y$12$a63pv1zyTsug7NYQWbhnhunRfPdwGddEojg/rYZ.t41yirCZnjxUi', '1cwKof3Wq0nm1jF7vXl-dyF6iMPeSbDp', null, null, null, '::1', '1490861964', '1490861964', '0', '1490865194', '10', '2', '10');
+INSERT INTO `user` VALUES ('4', 'user', 'user@localhost.com', '$2y$12$C40sbvZWX9CbEKPfoVTUmerf2g.lWqXlGXEpuM5Rj7EelKhCPUG.m', '-yhX4nTgGnsIUSJUBiEvAF0CFqcUqWbt', null, null, null, '::1', '1490861982', '1490861982', '0', '1490950393', '10', '3', '30');
 
 -- ----------------------------
 -- Table structure for user1

@@ -42,7 +42,10 @@ return [
             'hosxp/*',
             'site/*',
             'admin/*', 
-            'user/*'
+            'user/*',
+            'inven/*',
+            'gii/*',
+            'usermy/*'
         ]
     ],
 ];
