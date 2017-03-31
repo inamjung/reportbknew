@@ -36,13 +36,13 @@ return [
             'class' => 'frontend\modules\inven\Module',
         ],
 ],
-//    'as access' => [
-//        'class' => 'mdm\admin\components\AccessControl',
-//        'allowActions' => [
-//            'hosxp/*',
-//            'site/*',
-//            'admin/*', 
-//            'user/*'
-//        ]
-//    ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'hosxp/*',
+            'site/*',
+            'admin/*', 
+            'user/*'
+        ]
+    ],
 ];

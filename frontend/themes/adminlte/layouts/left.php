@@ -87,7 +87,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="#">
+                            <a href="<?php echo yii\helpers\Url::to(['/inven/invenmains/indexuser']);?>">
                                 <i class="fa fa-circle text-red"></i>
                                     <span>เบิกของ</span>
                             </a>
