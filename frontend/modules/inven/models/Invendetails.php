@@ -80,4 +80,7 @@ class Invendetails extends \yii\db\ActiveRecord
             'remark' => 'หมายเหตุ',
         ];
     }
+    public function getDetailproduct(){
+        return $this->hasOne(Products::className(), ['id'=>'product_id']);
+    }
 }

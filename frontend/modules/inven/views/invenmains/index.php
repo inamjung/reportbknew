@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
+use frontend\modules\inven\models\InvendetailsSearch;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\modules\inven\models\InvenmainsSearch */
@@ -23,12 +24,32 @@ $this->params['breadcrumbs'][] = $this->title;
         //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'kartik\grid\ExpandRowColumn',
+                'value'=> function($model, $key, $index, $column){
+                    return GridView::ROW_COLLAPSED;                    
+                },
+                'detail'=> function($model, $key, $index, $column){
+                    $searchModel = new frontend\modules\inven\models\InvendetailsSearch();
+                    $searchModel ->main_id = $model->id;
+                    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                    
+                    return Yii::$app->controller->renderPartial('detail',[
+                        'searchModel'=> $searchModel,
+                        'dataProvider'=> $dataProvider,
+                    ]);
+                 }
+                ],
 
-            'id',
+            //'id',
             'date',
-            'department_id',
+            
+            [
+               'attribute'=>'department_id' ,
+                'value'=>'maindep.name',
+            ],            
             'user_id',
-            'create_at',
+            //'create_at',
             // 'update_at',
 
             ['class' => 'yii\grid\ActionColumn'],

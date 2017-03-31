@@ -53,4 +53,7 @@ class Invenmains extends \yii\db\ActiveRecord
     public function getMaindetail(){
         return $this->hasMany(Invendetails::className(), ['main_id'=>'id']);
     }
+    public function getMaindep(){
+        return $this->hasOne(Departments::className(), ['id'=>'department_id']);
+    }
 }
