@@ -31,7 +31,10 @@ return [
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout'=>'left-menu'
-        ]
+        ],
+        'inven' => [
+            'class' => 'frontend\modules\inven\Module',
+        ],
 ],
 //    'as access' => [
 //        'class' => 'mdm\admin\components\AccessControl',
