@@ -92,8 +92,17 @@
                                     <span>เบิกของ</span>
                             </a>
                         </li>
+    <?php if(!Yii::$app->user->isGuest) {?>    
                         
-                      
+    <?php if(Yii::$app->user->identity->role == dektrium\user\models\User::ROLE_ADMIN) {?>                    
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/inven/invenmains/index']);?>">
+                                <i class="fa fa-circle text-red"></i>
+                                    <span>ทะเบียนเบิกของ</span>
+                            </a>
+                        </li>
+    <?php }?>  
+    <?php }?> 
                         
                     </ul>
             </li>
