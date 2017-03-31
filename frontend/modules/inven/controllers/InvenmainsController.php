@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use yii\base\Model;
+use kartik\mpdf\Pdf;
 
 /**
  * InvenmainsController implements the CRUD actions for Invenmains model.
@@ -126,8 +127,8 @@ class InvenmainsController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {            
             if (Model::validateMultiple($modelDetails) && $model->validate()) {
-//               $model->username = Yii::$app->user->identity->username;
-//               $model->createdate = date('Y-m-d');
+               $model->user_id = Yii::$app->user->identity->id;
+               $model->create_at = date('Y-m-d');
 //               $model->status = 'no';
                 $model->save();
                 foreach ($modelDetails as $modelDetail) {
@@ -233,4 +234,38 @@ class InvenmainsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actionReport($id) {
+   $model = \frontend\modules\inven\models\Invendetails::find()->where(['main_id'=>$id])->one();
+    $content = $this->renderPartial('_reportView');
+    
+    // setup kartik\mpdf\Pdf component
+    $pdf = new Pdf([
+        // set to use core fonts only
+        'mode' => Pdf::MODE_CORE, 
+        // A4 paper format
+        'format' => Pdf::FORMAT_A4, 
+        // portrait orientation
+        'orientation' => Pdf::ORIENT_PORTRAIT, 
+        // stream to browser inline
+        'destination' => Pdf::DEST_BROWSER, 
+        // your html content input
+        'content' => $content,  
+        // format content from your own css file if needed or use the
+        // enhanced bootstrap css built by Krajee for mPDF formatting 
+        'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+        // any css to be embedded if required
+        'cssInline' => '.kv-heading-1{font-size:18px}', 
+         // set mPDF properties on the fly
+        'options' => ['title' => 'Krajee Report Title'],
+         // call mPDF methods on the fly
+        'methods' => [ 
+            'SetHeader'=>['Krajee Report Header'], 
+            'SetFooter'=>['{PAGENO}'],
+        ]
+    ]);
+    
+    // return the pdf output as per the destination setting
+    return $pdf->render(); 
+}
 }

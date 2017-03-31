@@ -56,4 +56,7 @@ class Invenmains extends \yii\db\ActiveRecord
     public function getMaindep(){
         return $this->hasOne(Departments::className(), ['id'=>'department_id']);
     }
+    public function getMainuser(){
+        return $this->hasOne(\dektrium\user\models\User::className(), ['id'=>'user_id']);
+    }
 }

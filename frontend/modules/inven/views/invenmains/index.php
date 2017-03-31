@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
+        'formatter'=>['class'=>'yii\i18n\Formatter','nullDisplay'=>'-'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
@@ -48,11 +49,28 @@ $this->params['breadcrumbs'][] = $this->title;
                'attribute'=>'department_id' ,
                 'value'=>'maindep.name',
             ],            
-            'user_id',
+            //'user_id',
+              [
+               'label'=>'ผู้บันทึก',
+               'attribute'=>'user_id' ,
+                'value'=>'mainuser.username', 
+            ],            
+                     
             //'create_at',
             // 'update_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+               'template'=>'{update}{report}' ,
+                'buttons'=>[
+                    'update'=> function($url,$model){
+                        return Html::a('แกไข',$url,['class'=>'btn btn-info']);
+                    },
+                    'report'=> function($url,$model){
+                        return Html::a('พิมพ์',$url,['class'=>'btn btn-warning','target'=>'_blank']);
+                    }        
+                ]
+                
+                ],
         ],
     ]); ?>
 </div>
