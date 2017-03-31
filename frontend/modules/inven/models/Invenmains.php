@@ -49,4 +49,8 @@ class Invenmains extends \yii\db\ActiveRecord
             'update_at' => 'Update At',
         ];
     }
+    
+    public function getMaindetail(){
+        return $this->hasMany(Invendetails::className(), ['main_id'=>'id']);
+    }
 }
