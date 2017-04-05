@@ -32,10 +32,10 @@ $form = ActiveForm::begin(['method'=>'get',
                 'class'=>'form-control'
             ],
         ]);
-        ?>    
-    </div>
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        ถึงวันที่:
+        ?> 
+        <br/>
+         ถึงวันที่:
+         
     <?php
         echo yii\jui\DatePicker::widget([
             'name' => 'date2',
@@ -52,6 +52,7 @@ $form = ActiveForm::begin(['method'=>'get',
         ]);
         ?>    
     </div>
+    <br/>
         <div class="col-xs-3 col-sm-3 col-md-3">
          <?php
             $list = yii\helpers\ArrayHelper::map(frontend\modules\hosxp\models\Ward::find()                    
