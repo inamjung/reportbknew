@@ -78,9 +78,9 @@ $form = ActiveForm::begin(['method'=>'get',
 </div>
 <?php ActiveForm::end() ?>
 
-<div>
+<!--<div>
     รายงานยอดจำหน่ายผู้ป่วย Sepsis IPD 
-</div>
+</div>-->
 <?php
 $gridColumns = [
     ['class' => 'kartik\grid\SerialColumn'],
@@ -123,10 +123,11 @@ echo GridView::widget([
     'floatHeader' => FALSE, //คือการตรึงหัวตาราง  
     'panel' => [
         'type' => GridView::TYPE_SUCCESS,
-        'heading' => ''
+        'heading' => 'รายงานยอดจำหน่ายผู้ป่วย Sepsis IPD'
     ],
-   
-    
+    'toolbar'=>[
+        '{export}'
+    ],
     //เมนูส่งออกให้เห็นแค่ EXCEL,PDF
     'exportConfig' => [
         GridView::EXCEL => [],

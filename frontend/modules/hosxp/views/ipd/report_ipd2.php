@@ -76,9 +76,11 @@ $form = ActiveForm::begin(['method'=>'get',
     </div>
         </div>
 </div>
-<div>
+
+<?php ActiveForm::end()?>
+<!--<div>
     รายงานยอด Admit ผู้ป่วย IPD 
-</div>
+</div>-->
 <?php
 
 $gridColumns = [
@@ -122,13 +124,11 @@ echo GridView::widget([
     'floatHeader' => FALSE, //คือการตรึงหัวตาราง  
     'panel' => [
         'type' => GridView::TYPE_SUCCESS,
-        'heading' => ''
+        'heading' => 'รายงานยอด Admit ผู้ป่วย IPD'
     ],
-    
-    //เมนูส่งออก
+   
     'toolbar' => [       
-       '{export}',
-       //'{toggleData}'       
+          '{export}' 
     ],
     
     //เมนูส่งออกให้เห็นแค่ EXCEL,PDF
@@ -138,6 +138,4 @@ echo GridView::widget([
     ],
 ]);
 ?>
-<?php
-ActiveForm::end()
-?>
+
