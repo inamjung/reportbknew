@@ -60,26 +60,56 @@
 <ul class="sidebar-menu">            
             <li class="treeview active">
                     <a href="#">
-                        <i class="glyphicon glyphicon-cog"></i><span>รายงาน</span>
+                        <i class="glyphicon glyphicon-cog"></i><span>รายงาน HOSxP</span>
                         <i class="fa pull-right fa-angle-down"></i>
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="<?php echo yii\helpers\Url::to(['/hosxp/report/report1']);?>">
+                            <a href="<?php echo yii\helpers\Url::to(['/hosxp/ipd/index']);?>">
                                 <i class="fa fa-circle text-blue"></i>
-                                    <span>รายงาน1</span>
+                                    <span>IPD -บึงกาฬ</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo yii\helpers\Url::to(['/hosxp/report/report2']);?>">
-                                <i class="fa fa-circle text-blue"></i>
-                                    <span>รายงาน2</span>
+                            <a href="#">
+                                <i class="fa fa-circle text-green"></i>
+                                    <span>OPD</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-orange"></i>
+                                    <span>NCD -พรเจริญ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-red"></i>
+                                        <span>RX | TTM -ศรีวิไล</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-yellow"></i>
+                                    <span>NCD-พรเจริญ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-green"></i>
+                                    <span>NCD-พรเจริญ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-purple"></i>
+                                    <span>NCD-พรเจริญ</span>
                             </a>
                         </li>
                     </ul>
             </li>
    </ul> 
-       <ul class="sidebar-menu">            
+<!--       <ul class="sidebar-menu">            
             <li class="treeview active">
                     <a href="#">
                         <i class="glyphicon glyphicon-cog"></i><span>ระบบเบิก</span>
@@ -106,7 +136,7 @@
                         
                     </ul>
             </li>
-   </ul> 
+   </ul> -->
         
             </li>
    </ul> 
