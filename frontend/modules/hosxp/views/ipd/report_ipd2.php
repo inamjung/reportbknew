@@ -54,20 +54,11 @@ $form = ActiveForm::begin(['method'=>'get',
     </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
          <?php
-            $list = [                               
-                '00'=>'เลือกทั้งหมด',
-                '01'=>'ตึกผู้ป่วยเด็ก',
-                '02'=>'ตึกMED หญิง',
-                '03'=>'ตึกศัลยกรรมทั่วไป',
-                '04'=>'ตึกผู้ป่วยคลอด',
-                '05'=>'ตึกผู้ป่วยหลังคลอด',
-                '06'=>'ตึกICU',
-                '07'=>'ตึกพิเศษ',
-                '08'=>'ตึกMed ชาย',
-                '09'=>'ตึกผู้ป่วยจักษุ',
-                '11'=>'ตึกศัลยกรรมกระดูก',
-                ];
-                   echo Select2::widget([
+            $list = yii\helpers\ArrayHelper::map(frontend\modules\hosxp\models\Ward::find()                    
+                    ->where(['NOT LIKE','name','ยกเลิก'])
+                    ->all(), 'ward', 'name');
+            
+              echo Select2::widget([
                 'name' => 'ward',
                 'data' => $list,
                 'value' => $ward,
