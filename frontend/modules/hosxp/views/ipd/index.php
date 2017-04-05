@@ -1,5 +1,5 @@
 <div class="panel panel-primary">
-  <div class="panel-heading"><h4>รายงาน IPD โดย นายปริญญา ลอยพิมาย นวก.คอมพิวเตอร์ รพ.บึงกาฬ</h4></div>
+  <div class="panel-heading"><h4>รายงาน IPD </h4><h5>โดย นายปริญญา ลอยพิมาย &nbsp;&nbsp; ตำแหน่ง นวก.คอมพิวเตอร์  &nbsp;&nbsp;รพ.บึงกาฬ</h5></div>
   <div class="panel-body">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">               

@@ -105,8 +105,8 @@ $gridColumns = [
                 'ipd/indivreport_ipd2', 
                     'ward'=>$model['ward'],
                     'date1'=>$_GET['date1'],
-                    'date2'=>$_GET['date2'],
-                
+                    'date2'=>$_GET['date2'],      
+                     'target'=>'_blank',
                     ]
     );
             },

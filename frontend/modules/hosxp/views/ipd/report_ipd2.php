@@ -107,8 +107,8 @@ $gridColumns = [
                     'ward'=>$model['ward'],
                     'date1'=>$_GET['date1'],
                     'date2'=>$_GET['date2'],
-                
                     ]
+                        
     );
             },
         
