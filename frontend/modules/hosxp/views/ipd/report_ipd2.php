@@ -70,7 +70,8 @@ $form = ActiveForm::begin(['method'=>'get',
                 ],
             ]);
             ?>            
-        </div>    
+        </div> 
+   
     <div class="col-xs-2 col-sm-2 col-md-2">
         <button class='btn btn-danger'>ประมวลผล</button>   
     </div>

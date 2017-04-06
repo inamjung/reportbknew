@@ -12,7 +12,7 @@ use kartik\widgets\Select2;
 
 <?php
 $form = ActiveForm::begin(['method'=>'get',
-    'action'=> Url::to(['ipd/report_ipd2']),]);
+    'action'=> Url::to(['ipd/report_ipd1']),]);
 ?>
 <div class="well">
     <div class="row">
