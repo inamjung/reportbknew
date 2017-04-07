@@ -73,13 +73,13 @@
                         <li>
                             <a href="#">
                                 <i class="fa fa-circle text-green"></i>
-                                    <span>OPD</span>
+                                    <span>OPD -บุ่งคล้า</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-circle text-orange"></i>
-                                    <span>NCD -พรเจริญ</span>
+                                    <span>DENT -เซกา</span>
                             </a>
                         </li>
                         <li>
@@ -91,19 +91,25 @@
                         <li>
                             <a href="#">
                                 <i class="fa fa-circle text-yellow"></i>
-                                    <span>NCD-พรเจริญ</span>
+                                    <span>PP -โซ่พิสัย</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-circle text-green"></i>
-                                    <span>NCD-พรเจริญ</span>
+                                    <span>ER | ACC -ปากคาด</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-circle text-purple"></i>
-                                    <span>NCD-พรเจริญ</span>
+                                    <span>LR -บึงโขงหลง</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle text-blue"></i>
+                                    <span>NCD -พรเจริญ</span>
                             </a>
                         </li>
                     </ul>
