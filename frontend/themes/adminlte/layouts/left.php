@@ -83,7 +83,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo yii\helpers\Url::to(['/hosxp/ttmreport/index'])?>">
                                 <i class="fa fa-circle text-red"></i>
                                         <span>RX | TTM -ศรีวิไล</span>
                             </a>

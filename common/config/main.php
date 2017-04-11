@@ -35,6 +35,9 @@ return [
         'inven' => [
             'class' => 'frontend\modules\inven\Module',
         ],
+        'bkhealth' => [
+            'class' => 'frontend\modules\bkhealth\Module',
+        ],
 ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
@@ -45,7 +48,8 @@ return [
             'user/*',
             'inven/*',
             'gii/*',
-            'usermy/*'
+            'usermy/*',
+            'bkhealth/*'
         ]
     ],
 ];
