@@ -1,5 +1,5 @@
 <div class="panel panel-success">
-  <div class="panel-heading"><h4>รายงาน IPD </h4><h5>โดย นายวิรัตน์ ศรีวิโรจน์  และ นายอิสระ  พลสรรค์  &nbsp;&nbsp; ตำแหน่ง นวก.คอมพิวเตอร์  &nbsp;&nbsp;รพ.ปากาด</h5></div>
+  <div class="panel-heading"><h4>รายงาน การเงิน </h4><h5>โดย นายวิรัตน์ ศรีวิโรจน์  และ นายอิสระ  พลสรรค์  &nbsp;&nbsp; ตำแหน่ง นวก.คอมพิวเตอร์  &nbsp;&nbsp;รพ.ปากาด</h5></div>
   <div class="panel-body">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">               
