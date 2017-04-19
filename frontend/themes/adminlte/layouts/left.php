@@ -95,7 +95,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo yii\helpers\Url::to(['/hosxp/finance/index'])?>">
                                 <i class="fa fa-circle text-green"></i>
                                     <span>ER | ACC -ปากคาด</span>
                             </a>
