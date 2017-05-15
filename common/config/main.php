@@ -49,7 +49,8 @@ return [
             'inven/*',
             'gii/*',
             'usermy/*',
-            'bkhealth/*'
+            'bkhealth/*',
+            'gridview/*'
         ]
     ],
 ];

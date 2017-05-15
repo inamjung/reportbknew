@@ -58,9 +58,9 @@
         
         
 <ul class="sidebar-menu">            
-            <li class="treeview active">
+            <li class="treeview">
                     <a href="#">
-                        <i class="glyphicon glyphicon-cog"></i><span>รายงาน HOSxP</span>
+                        <i class="glyphicon glyphicon-search"></i><span>รายงาน HOSxP</span>
                         <i class="fa pull-right fa-angle-down"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -115,6 +115,35 @@
                     </ul>
             </li>
    </ul> 
+<ul class="sidebar-menu">            
+            <li class="treeview active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-list-alt"></i><span>งานตรวจสุขภาพ</span>
+                        <i class="fa pull-right fa-angle-down"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/healthhos/hosvisit']);?>">
+                                <i class="fa fa-circle text-blue"></i>
+                                    <span>OPD - Visit</span>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/insys/index']);?>">
+                                <i class="fa fa-circle text-yellow"></i>
+                                    <span>ทะเบียนผลตรวจ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/bkopdscreen/insertopd']);?>">
+                                <i class="fa fa-circle text-blue"></i>
+                                    <span>นำเข้า - OPDVisit</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </li>
+   </ul>
 <!--       <ul class="sidebar-menu">            
             <li class="treeview active">
                     <a href="#">

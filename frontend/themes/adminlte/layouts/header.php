@@ -6,7 +6,7 @@ use yii\helpers\Html;
 ?>
 
 <header class="main-header">
-    <img class="img-responsive" src="img/bg6.jpg" alt="..." style="width: 100%; height: 210px;">  
+    <img class="img-responsive" src="img/header1.jpg" alt="..." style="width: 100%; height: 210px;">  
 
 
     <?= Html::a('<span class="logo-mini"><img src="./img/cdcswl.png" style="width: 40px; hight: 20px;"></span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
