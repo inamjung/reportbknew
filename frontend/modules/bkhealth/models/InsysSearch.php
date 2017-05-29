@@ -18,9 +18,10 @@ class InsysSearch extends Insys
     public function rules()
     {
         return [
-            [['Vstdate', 'Vn', 'Hn', 'Pt', 'Sex', 'Age_y', 'Pttype', 'Clinic', 'Drugallergy', 'Pdx', 'Height', 'Bw', 'Waist', 'Cc', 'Bpd', 'Bps', 'Drinking_type_id', 'Smoking_type_id', 'Hr', 'Pe', 'Pulse', 'Temperature', 'Rr', 'Fbs', 'Bmi', 'Tg', 'Hdl', 'Glucurine', 'Bun', 'Creatinine', 'Ua', 'Hba1c', 'Tc', 'Ldl', 'Ast', 'Alt', 'Cholesterol', 'Gfr_ckd', 'Hct_cbc', 'Wbc_count_cbc', 'Eo_cbc', 'Urine_proteine_ua', 'Urine_gluose_ua', 'Rbc_ua', 'Wbc_ua', 'Parasite', 'Occountblood', 'Dx_doctor', 'Dname'], 'safe'],
+            [['Vstdate', 'Cid','Vn', 'Hn', 'Pt', 'Sex', 'Age_y', 'Pttype', 'Clinic', 'Drugallergy', 'Pdx', 'Height', 'Bw', 'Waist', 'Cc','Bp' ,'Bpd', 'Bps', 'Drinking_type_id', 'Smoking_type_id', 'Hr', 'Pe', 'Pulse', 'Temperature', 'Rr', 'Fbs',  'Tg', 'Hdl', 'Glucurine', 'Bun', 'Creatinine', 'Ua', 'Hba1c', 'Tc', 'Ldl', 'Ast', 'Alt', 'Cholesterol', 'Gfr_ckd', 'Hct_cbc', 'Wbc_count_cbc', 'Eo_cbc', 'Urine_proteine_ua', 'Urine_gluose_ua', 'Rbc_ua', 'Wbc_ua', 'Parasite', 'Occountblood', 'Uric','Dx_doctor', 'Dname'], 'safe'],
             [['ic_confirm', 'ic_insys','ic_report'], 'integer'],
-        ];
+            [['Bmi'],'number']
+            ];
     }
 
     /**
@@ -66,6 +67,7 @@ class InsysSearch extends Insys
         ]);
 
         $query->andFilterWhere(['like', 'Vstdate', $this->Vstdate])
+            ->andFilterWhere(['like', 'Cid', $this->Cid])
             ->andFilterWhere(['like', 'Vn', $this->Vn])
             ->andFilterWhere(['like', 'Hn', $this->Hn])
             ->andFilterWhere(['like', 'Pt', $this->Pt])
@@ -79,6 +81,7 @@ class InsysSearch extends Insys
             ->andFilterWhere(['like', 'Bw', $this->Bw])
             ->andFilterWhere(['like', 'Waist', $this->Waist])
             ->andFilterWhere(['like', 'Cc', $this->Cc])
+            ->andFilterWhere(['like', 'Bp', $this->Bp])    
             ->andFilterWhere(['like', 'Bpd', $this->Bpd])
             ->andFilterWhere(['like', 'Bps', $this->Bps])
             ->andFilterWhere(['like', 'Drinking_type_id', $this->Drinking_type_id])
@@ -112,6 +115,7 @@ class InsysSearch extends Insys
             ->andFilterWhere(['like', 'Wbc_ua', $this->Wbc_ua])
             ->andFilterWhere(['like', 'Parasite', $this->Parasite])
             ->andFilterWhere(['like', 'Occountblood', $this->Occountblood])
+            ->andFilterWhere(['like', 'Uric', $this->Uric])    
             ->andFilterWhere(['like', 'Dx_doctor', $this->Dx_doctor])
             ->andFilterWhere(['like', 'Dname', $this->Dname]);
 

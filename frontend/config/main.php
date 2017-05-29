@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
@@ -9,6 +10,8 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
+    'language'=>'th',
+    'name'=>'โรงพยาบาลศรีวิไล',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
@@ -21,6 +24,10 @@ return [
         ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
+        ],
+        'formatter'=>[
+            'nullDisplay'=>'',
+            'dateFormat'=>'dd/MM/yyyy'
         ],
         'user' => [
             'identityClass' => 'common\models\User',

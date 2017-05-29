@@ -56,7 +56,8 @@
             ]
         ) ?>
         
-        
+<?php if(! Yii::$app->user->isGuest){?>   
+
 <ul class="sidebar-menu">            
             <li class="treeview">
                     <a href="#">
@@ -135,11 +136,64 @@
                             </a>
                         </li>
                         <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/insys/inresult']);?>">
+                                <i class="fa fa-circle text-red"></i>
+                                    <span>ทะเบียนแปรผล</span>
+                            </a>
+                        </li>
+<!--                        <li>
                             <a href="<?php echo yii\helpers\Url::to(['/bkhealth/bkopdscreen/insertopd']);?>">
                                 <i class="fa fa-circle text-blue"></i>
                                     <span>นำเข้า - OPDVisit</span>
                             </a>
+                        </li>-->
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/resultlab/index']);?>">
+                                <i class="fa fa-circle text-green"></i>
+                                    <span>ตารางเทียบผล</span>
+                            </a>
                         </li>
+                        
+                    </ul>
+            </li>
+   </ul>
+
+<ul class="sidebar-menu">            
+            <li class="treeview active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-search"></i><span>Lab Online</span>
+                        <i class="fa pull-right fa-angle-down"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/labonline/labbydate/labvisit']);?>">
+                                <i class="fa fa-circle text-yellow"></i>
+                                    <span>ค้นหาผลแลปแยกรายVisit</span>
+                            </a>
+                        </li> 
+                        
+                        
+                    </ul>
+            </li>
+   </ul>
+
+
+<?php }?>
+
+<ul class="sidebar-menu">            
+            <li class="treeview active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-list-alt"></i><span>แจ้งผลการตรวจสุขภาพ</span>
+                        <i class="fa pull-right fa-angle-down"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo yii\helpers\Url::to(['/bkhealth/inresult/searchic']);?>">
+                                <i class="fa fa-circle text-green"></i>
+                                    <span>ค้นหาผลตรวจสุขภาพ</span>
+                            </a>
+                        </li> 
+                        
                         
                     </ul>
             </li>

@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'panel'=>[
             'heading'=>'ทะเบียนผลตรวจสุขภาพ',
             //'before'=>$datas[4]['pt'],
-            'type'=> kartik\grid\GridView::TYPE_INFO
+            'type'=> kartik\grid\GridView::TYPE_WARNING
         ],
         'toolbar' => [       
         //'{export}',
@@ -51,21 +51,24 @@ $this->params['breadcrumbs'][] = $this->title;
              },
             ],
             //'Vn',
-            'Hn',
+//            'Hn',
             'Pt',
-            'Cc',
+//            'Cc',
             //'Sex',
             // 'Age_y',
             // 'Pttype',
             // 'Clinic',
             // 'Drugallergy',
-             'Pdx',
+//             'Pdx',
             // 'Height',
             // 'Bw',
-            // 'Waist',
-             
-            // 'Bpd',
-            // 'Bps',
+             'Waist',             
+              [
+                   'header'=>'BP',
+                   'attribute'=>'bp1'                   
+               ],        
+//             'Bpd',
+//             'Bps',
             // 'Drinking_type_id',
             // 'Smoking_type_id',
             // 'Hr',
@@ -73,30 +76,34 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'Pulse',
             // 'Temperature',
             // 'Rr',
-            // 'Fbs',
-            // 'Bmi',
-            // 'Tg',
-            // 'Hdl',
+             'Fbs',
+             'Bmi',
+             'Tg',
+             'Hdl',
             // 'Glucurine',
-            // 'Bun',
-            // 'Creatinine',
-            // 'Ua',
-            // 'Hba1c',
-            // 'Tc',
-            // 'Ldl',
-            // 'Ast',
-            // 'Alt',
-            // 'Cholesterol',
-            // 'Gfr_ckd',
-            // 'Hct_cbc',
-            // 'Wbc_count_cbc',
-            // 'Eo_cbc',
-            // 'Urine_proteine_ua',
-            // 'Urine_gluose_ua',
+             'Bun',             
+               [
+                   'header'=>'Cr',
+                   'attribute'=>'Creatinine'                   
+               ],      
+//             'Ua',
+//             'Hba1c',
+             'Tc',
+             'Ldl',
+             'Ast',
+             'Alt',
+             //'Cholesterol',
+             'Gfr_ckd',
+             'Hct_cbc',
+             'Wbc_count_cbc',
+             'Eo_cbc',
+             'Uric',       
+             'Urine_proteine_ua',
+             'Urine_gluose_ua',
             // 'Rbc_ua',
             // 'Wbc_ua',
-            // 'Parasite',
-            // 'Occountblood',
+//             'Parasite',
+//             'Occountblood',
             // 'Dx_doctor',
             // 'Dname',
             // 'ic_confirm',
@@ -113,24 +120,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => ['class' => 'text-center','style'=>'width: 80px;'],               
             ],            
 
-            ['class' => 'yii\grid\ActionColumn',
-              'template'=> '{update}{view}' ,
-              'buttons'=>[
-                  'update' => function ($url, $model, $key) {
-                                return Html::a('<span class="glyphicon glyphicon-upload"></span>', '#', [
-                                            'class' => 'activity-update-link btn btn-info',
-                                            'title' => 'ส่งพบแพทย์',
-                                            'data-toggle' => 'modal',
-                                            'data-target' => '#activity-modal',
-                                            'data-id' => $key,
-                                            'data-pjax' => '0',
-                                ]);
-                            },
-                  'view'=> function($url,$model){
-                     return Html::a('<span class="glyphicon glyphicon-search"></span>',['/bkhealth/insys/view','id'=>$model->Vn] ,['title' => 'ดู', 'class' => 'btn btn-primary']);
-                        },
-                    ]  
-            ],
+//            ['class' => 'yii\grid\ActionColumn',
+//              'template'=> '{update}{view}' ,
+//              'buttons'=>[
+//                  'update' => function ($url, $model, $key) {
+//                                return Html::a('<span class="glyphicon glyphicon-upload"></span>', '#', [
+//                                            'class' => 'activity-update-link btn btn-info',
+//                                            'title' => 'ส่งพบแพทย์',
+//                                            'data-toggle' => 'modal',
+//                                            'data-target' => '#activity-modal',
+//                                            'data-id' => $key,
+//                                            'data-pjax' => '0',
+//                                ]);
+//                            },
+//                  'view'=> function($url,$model){
+//                     return Html::a('<span class="glyphicon glyphicon-search"></span>',['/bkhealth/insys/view','id'=>$model->Vn] ,['title' => 'ดู', 'class' => 'btn btn-primary']);
+//                        },
+//                    ]  
+//            ],
         ],
     ]); ?>
      <?php Pjax::end() ?>

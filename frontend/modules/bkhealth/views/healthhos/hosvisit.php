@@ -22,6 +22,9 @@ $form = ActiveForm::begin(['method' => 'get',
 ?>
 
 <div class="well">
+    <p>
+    <h3 style="color: blue">กรอก HN เพื่อเลือก Visit ที่เป็นการตรวจสุขภาพ</h3>
+</p><br>
     <div class="row">
 
     <div class="col-xs-4 col-sm-4 col-md-4">        
@@ -51,9 +54,9 @@ if (count($datas) == 0) {
         'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => '-'],
         'panel'=>[
             'heading'=>$datas[1]['hn'].' : '.$datas[4]['pt'].' | อายุ '.$datas[3]['age_y'].' ปี | สิทธิบัตร : '.$datas[2]['pttname'],
-            'before'=>'1 ) เลือก Visit ที่เป็นการตรวจสุขภาพประจำปี '.
-            '<br>'. '2 ) คลิกช่องวันที่ที่เลือก ถ้านำเข้าได้จะปรากฎคำว่า "เพิ่มข้อมูลแล้ว" แล้วกด ปิด ## หากไม่มีข้อความนี้แสดงว่า Visit ที่เลือกถูกนำเข้าไปแล้ว ให้กด ปิด แล้วเลือก Visit อื่น',
-            'type'=> kartik\grid\GridView::TYPE_INFO
+            'before'=>'<span style="color: red">'.'1 ) เลือก Visit ที่เป็นการตรวจสุขภาพประจำปี '.
+            '<br>'. '2 ) คลิกช่องวันที่ที่เลือก ถ้านำเข้าได้จะปรากฎคำว่า "เพิ่มข้อมูลแล้ว" แล้วกด ปิด ## หากไม่มีข้อความนี้แสดงว่า Visit ที่เลือกถูกนำเข้าไปแล้ว ให้กด ปิด แล้วเลือก Visit อื่น'.'</span>',
+            'type'=> kartik\grid\GridView::TYPE_DEFAULT
         ],
         'toolbar' => [       
         //'{export}',
@@ -75,6 +78,7 @@ if (count($datas) == 0) {
                     return Html::a(Html::encode ( DateThai($model['vstdate'])) , [
                                 'healthhos/insertsys/',
                         'Vstdate' =>$model['vstdate'],
+                        'Cid' => $model['cid'],
                         'Vn' => $model['vn'],
                         'Hn'=>$model['hn'],
                         'Pt'=>$model['pt'],
@@ -88,6 +92,7 @@ if (count($datas) == 0) {
                         'Bw'=>$model['bw'],
                         'Waist'=>$model['waist'],
                         'Cc'=>$model['cc'],
+                        'Bp'=>$model['bp'],
                         'Bpd'=>$model['bpd'],
                         'Bps'=>$model['bps'], 
                         'Drinking_type_id'=>$model['drinking_type_id'],
@@ -120,7 +125,8 @@ if (count($datas) == 0) {
                         'Rbc_ua'=>$model['rbc_ua'],
                         'Wbc_ua'=>$model['wbc_ua'],
                         'Parasite'=>$model['parasite'],
-                        'Occountblood'=>$model['occountblood'],                        
+                        'Occountblood'=>$model['occountblood'], 
+                        'Uric'=>$model['uric'],
                         'Dx_doctor'=>$model['dx_doctor'],
                         'Dname'=>$model['dname'],
 //                        'ic_confirm'=>$model['ic_confirm'],
@@ -139,6 +145,7 @@ if (count($datas) == 0) {
             'cc',
 //            'waist',
 //            'bmi',
+            'bp',            
             'fbs',
             'tg',
             'hdl',
@@ -150,6 +157,7 @@ if (count($datas) == 0) {
             'rbc_ua',
             'wbc_ua',            
             'creatinine',
+                        
             //'gfr_ckd'
         ]
     ])

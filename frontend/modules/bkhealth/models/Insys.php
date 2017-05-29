@@ -64,6 +64,25 @@ class Insys extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $Waist1;
+    public $Bmi1;
+    public $Tg1;
+    public $Hdl1;
+    public $Creatinine1;
+    public $Ldl1;
+    public $Cholesterol1;
+    public $Gfr_ckd1;
+    public $Hct_cbc1;
+    public $Wbc_count_cbc1;
+    public $Eo_cbc1;
+    public $Urine_proteine_ua1;
+    public $Urine_gluose_ua1;
+    public $Uric1;
+    public $Ast1;
+    public $Alt1;
+    public $Bp1;
+    public $Fbs1;
+    
     public static function tableName()
     {
         return 'insys';
@@ -77,8 +96,12 @@ class Insys extends \yii\db\ActiveRecord
         return [
             [['Vn'], 'required'],
             [['ic_confirm', 'ic_insys','ic_report'], 'integer'],
-            [['Vstdate', 'Vn', 'Hn', 'Pt', 'Sex', 'Age_y', 'Pttype', 'Clinic', 'Drugallergy', 'Pdx', 'Height', 'Bw', 'Waist', 'Cc', 'Bpd', 'Bps', 'Drinking_type_id', 'Smoking_type_id', 'Hr', 'Pe', 'Pulse', 'Temperature', 'Rr', 'Fbs', 'Bmi', 'Tg', 'Hdl', 'Glucurine', 'Bun', 'Creatinine', 'Ua', 'Hba1c', 'Tc', 'Ldl', 'Ast', 'Alt', 'Cholesterol', 'Gfr_ckd', 'Hct_cbc', 'Wbc_count_cbc', 'Eo_cbc', 'Urine_proteine_ua', 'Urine_gluose_ua', 'Rbc_ua', 'Wbc_ua', 'Parasite', 'Occountblood', 'Dx_doctor', 'Dname'], 'string', 'max' => 255],
-        ];
+            [['Bmi1','Waist1','Tg1','Hdl1','Creatinine1','Ldl1','Cholesterol1','Gfr_ckd1'
+               ,'Hct_cbc1','Wbc_count_cbc1','Eo_cbc1','Urine_proteine_ua1','Urine_gluose_ua1','Uric1','Bp1' 
+               ,'Fbs1' ,'Vstdate', 'Vn', 'Hn', 'Pt', 'Sex', 'Age_y', 'Pttype', 'Clinic', 'Drugallergy', 'Pdx', 'Height', 'Bw', 'Waist', 'Cc', 'Bp','Bpd', 'Bps', 'Drinking_type_id', 'Smoking_type_id', 'Hr', 'Pe', 'Pulse', 'Temperature', 'Rr', 'Fbs',  'Tg', 'Hdl', 'Glucurine', 'Bun', 'Creatinine', 'Ua', 'Hba1c', 'Tc', 'Ldl', 'Ast', 'Alt', 'Cholesterol', 'Gfr_ckd', 'Hct_cbc', 'Wbc_count_cbc', 'Eo_cbc', 'Urine_proteine_ua', 'Urine_gluose_ua', 'Rbc_ua', 'Wbc_ua', 'Parasite', 'Occountblood', 'Uric','Dx_doctor', 'Dname'], 'string', 'max' => 255],
+            [['Bmi'], 'number'],
+            [['Cid'],'string', 'max' => 13]
+            ];
     }
 
     /**
@@ -88,6 +111,7 @@ class Insys extends \yii\db\ActiveRecord
     {
         return [
             'Vstdate' => 'วันที่ตรวจ',
+            'Cid'=>'Cid',
             'Vn' => 'Vn',
             'Hn' => 'Hn',
             'Pt' => 'ชื่อ-สกุล',
@@ -150,7 +174,11 @@ class Insys extends \yii\db\ActiveRecord
     public function getPdrink(){
         return $this->hasOne(DrinkingType::className(), ['drinking_type_id'=>'Drinking_type_id']);
     }
-    public function getBp(){
+    public function getBp1(){
         return $this->Bps.' / '.$this->Bpd;
+    }
+    
+    public function getItemfbs0(){
+        return $this->hasMany(Itemlab::className(), ['name'=>'Fbs']);
     }
 }

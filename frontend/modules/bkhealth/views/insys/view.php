@@ -1,12 +1,12 @@
 <?php
 
 use yii\helpers\Html;
-//use yii\widgets\DetailView;
+use kartik\detail\DetailView;
 use yii\widgets\ActiveForm;
 use kartik\grid\GridView;
 use yii\data\ActiveDataProvider;
 use frontend\modules\bkhealth\models\Pttype;
-use kartik\detail\DetailView;
+
 
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\bkhealth\models\Insys */
@@ -28,12 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
         ]);    
     ?>
 <div class="insys-view">
-
-    <h3><?= Html::encode($this->title) ?></h3>
+  
+        <h3 style="color: blue"><?= Html::encode($this->title) ?></h3>
+    
+    
 
     <p>
         <?= Html::a('ทะเบียน', ['index'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('แก้ไข', ['update', 'id' => $model->Vn], ['class' => 'btn btn-primary']) ?>
+        <?php // Html::a('แก้ไข', ['update', 'id' => $model->Vn], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('ลบ', ['delete', 'id' => $model->Vn], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -43,12 +45,13 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
         <?= Html::a('พิมพ์', ['update', 'id' => $model->Vn], ['class' => 'btn btn-info']) ?>
     </p>
+    
+    
       <?php
-    $attributes = [
-        
+    $attributes = [        
         [
         'group'=>true,
-        'label'=>'# ข้อมูลทั่วไป',
+        'label'=>'<span style="color: blue">'.'# ข้อมูลทั่วไป'.'</span>',
         'rowOptions'=>['class'=>'success']
     ],
     [
@@ -118,23 +121,37 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ],
     
-        [
-        'group'=>true,
-        'label'=>'#  ดัชนีมวลกาย',
-        'rowOptions'=>['class'=>'info'],
-        //'groupOptions'=>['class'=>'text-center']
-    ],   
-      [
-        'attribute'=>'Bmi',
-        'format'=>'raw',
-        'valueColOptions'=>['style'=>'width:30%']
-    ],  
     [
         'group'=>true,
-        'label'=>'#  รอบเอว',
+        'label'=>'<span style="color: blue">'.'#  ดัชนีมวลกาย'.'</span>',
         'rowOptions'=>['class'=>'info'],
         //'groupOptions'=>['class'=>'text-center']
-    ],   
+    ],
+    [
+        'columns' => [
+        [
+            'attribute'=>'Bmi',
+            'format'=>'raw',
+            'valueColOptions'=>['style'=>'width:30%']
+        ],
+          [
+            'attribute'=>'Bmi',
+            'format'=>'raw',  
+            'value'=> $model->Bmi < 18.5 ? 'ผอม' : 'ปกติ',
+            'label'=>'แปลผล BMI',
+            'valueColOptions'=>['style'=>'width:30%'],
+            
+            ],
+            
+         ]   
+       ],
+        [
+            'group'=>true,
+            'label'=>'<span style="color: blue">'.'#  รอบเอว'.'</span>',
+            'rowOptions'=>['class'=>'info'],
+            //'groupOptions'=>['class'=>'text-center']
+        ], 
+
       [
         'attribute'=>'Waist',
         'label'=>'Waist',  
@@ -143,7 +160,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],  
     [
         'group'=>true,
-        'label'=>'#  ความดันโลหิต',
+        'label'=>'<span style="color: blue">'.'#  ความดันโลหิต'.'</span>',
         'rowOptions'=>['class'=>'info'],
         //'groupOptions'=>['class'=>'text-center']
     ],   
@@ -151,13 +168,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'Bp', 
                 'label'=>'BP',
                 'format'=>'raw', 
-                'value'=>'<kbd>'.$model->Bp.'</kbd>',
+                'value'=>'<kbd>'.$model->Bpd.' / '.$model->Bps.'</kbd>',
                 'valueColOptions'=>['style'=>'width:30%'], 
                 'displayOnly'=>true
       ],  
      [
         'group'=>true,
-        'label'=>'#  เบาหวาน',
+        'label'=>'<span style="color: blue">'.'#  เบาหวาน'.'</span>',
         'rowOptions'=>['class'=>'info'],
         //'groupOptions'=>['class'=>'text-center']
     ],   
@@ -169,7 +186,7 @@ $this->params['breadcrumbs'][] = $this->title;
       ],  
      [
         'group'=>true,
-        'label'=>'#  ภาวะเสี่ยงโรคเกาต์',
+        'label'=>'<span style="color: blue">'.'#  ภาวะเสี่ยงโรคเกาต์'.'</span>',
         'rowOptions'=>['class'=>'info'],
         //'groupOptions'=>['class'=>'text-center']
     ],   
@@ -182,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
         
      [
         'group'=>true,
-        'label'=>'## ไขมันในเลือด',
+        'label'=>'<span style="color: blue">'.'## ไขมันในเลือด'.'</span>',
         'rowOptions'=>['class'=>'danger'],        
     ],
             [
@@ -219,7 +236,7 @@ $this->params['breadcrumbs'][] = $this->title;
         
     [
         'group'=>true,
-        'label'=>'## CBC',
+        'label'=>'<span style="color: blue">'.'## CBC'.'</span>',
         'rowOptions'=>['class'=>'danger']
     ],
             [
@@ -239,7 +256,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
     [
         'group'=>true,
-        'label'=>'## ตรวจปัสสาวะ',
+        'label'=>'<span style="color: blue">'.'## ตรวจปัสสาวะ'.'</span>',
         'rowOptions'=>['class'=>'danger'],
         //'groupOptions'=>['class'=>'text-center']
     ],
@@ -261,7 +278,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],    
     [
         'group'=>true,
-        'label'=>'## ตรวจอุจจาระ',
+        'label'=>'<span style="color: blue">'.'## ตรวจอุจจาระ'.'</span>',
         'rowOptions'=>['class'=>'danger'],        
     ],
             [
@@ -293,6 +310,8 @@ echo DetailView::widget([
 ?>
 </div
 </div>
+
+
 <?php
 
 function DateThai($strDate)

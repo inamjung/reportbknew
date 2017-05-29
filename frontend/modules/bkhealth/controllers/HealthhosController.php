@@ -10,20 +10,20 @@ class HealthhosController extends Controller
 {
     public function actionHosvisit($hn=null){
         
-        $sql="select v.vstdate,v.vn ,p.hn,CONCAT(p.pname,p.fname,'  ',p.lname) as pt
+        $sql="select v.vstdate,p.cid,v.vn ,p.hn,CONCAT(p.pname,p.fname,'  ',p.lname) as pt
 ,p.sex,v.age_y,p.pttype,p.clinic,p.drugallergy
-,v.pdx,o.height,o.bw,o.waist,o.cc,o.bpd,o.bps,o.drinking_type_id,o.smoking_type_id
-,o.hr,o.pe,o.pulse,o.temperature,o.rr,o.fbs
-,o.bmi,o.tg,o.hdl,o.glucurine,o.bun,o.creatinine,o.ua,o.hba1c,o.tc,o.ldl,o.ast,o.alt,o.cholesterol
+,v.pdx,ROUND(o.height,0) height,ROUND(o.bw,0) bw,ROUND(o.waist,0) waist,o.cc,CONCAT(ROUND(o.bps,0),ROUND(o.bpd,0)) as bp,ROUND(o.bpd,0) as bpd,ROUND(o.bps,0) as bps,o.drinking_type_id,o.smoking_type_id
+,o.hr,o.pe,o.pulse,o.temperature,o.rr,ROUND(o.fbs,0) fbs
+,o.bmi,ROUND(o.tg,0) tg,ROUND(o.hdl,0) hdl,o.glucurine,ROUND(o.bun,0) bun,o.creatinine,o.ua,o.hba1c,ROUND(o.tc,0) tc,ROUND(o.ldl,0) ldl,ROUND(o.ast,0) ast,ROUND(o.alt,0) alt,ROUND(o.cholesterol,0) cholesterol
 ,pg.gfr_ckd,ptt.name as pttname
 ,(select lo.lab_order_result
 from lab_head lh
 left outer join lab_order lo on lo.lab_order_number=lh.lab_order_number
 where lo.lab_items_code ='4' and lh.vn=v.vn) as hct_cbc
-,(select lo.lab_order_result
+,REPLACE((select lo.lab_order_result
 from lab_head lh
 left outer join lab_order lo on lo.lab_order_number=lh.lab_order_number
-where lo.lab_items_code ='5' and lh.vn=v.vn) as wbc_count_cbc
+where lo.lab_items_code ='5' and lh.vn=v.vn),',','') as wbc_count_cbc
 ,(select lo.lab_order_result
 from lab_head lh
 left outer join lab_order lo on lo.lab_order_number=lh.lab_order_number
@@ -52,6 +52,10 @@ where lo.lab_items_code ='213' and lh.vn=v.vn) as parasite
 from lab_head lh
 left outer join lab_order lo on lo.lab_order_number=lh.lab_order_number
 where lo.lab_items_code ='212' and lh.vn=v.vn) as occountblood
+,(select lo.lab_order_result
+from lab_head lh
+left outer join lab_order lo on lo.lab_order_number=lh.lab_order_number
+where lo.lab_items_code ='79' and lh.vn=v.vn) as uric
 ,v.dx_doctor
 ,(select name from doctor where code=v.dx_doctor)as dname
 from vn_stat v
@@ -63,7 +67,7 @@ left outer join pttype ptt on ptt.pttype=p.pttype
 where  p.hn='$hn'
 and ph.is_officer='Y'
 and v.dx_doctor  is not null
-group by v.vn order by v.vn desc limit 30";
+group by v.vn order by v.vn desc limit 15";
         
          try{
             $rawData = Yii::$app->db2->createCommand($sql)->queryAll();
@@ -92,19 +96,20 @@ group by v.vn order by v.vn desc limit 30";
             
         ]);
     }
-    public function actionInsertsys($Vstdate=null,$Vn=null,$Hn=null,$Pt=null,$Sex=null,$Age_y=null,$Pttype=null
-            ,$Clinic=null,$Drugallergy=null,$Pdx=null,$Height=null,$Bw=null,$Waist=null,$Cc=null,$Bpd=null,$Bps=null
+    public function actionInsertsys($Vstdate=null,$Cid=null,$Vn=null,$Hn=null,$Pt=null,$Sex=null,$Age_y=null,$Pttype=null
+            ,$Clinic=null,$Drugallergy=null,$Pdx=null,$Height=null,$Bw=null,$Waist=null,$Cc=null,$Bp=null,$Bpd=null,$Bps=null
             ,$Drinking_type_id=null,$Smoking_type_id=null,$Hr=null,$Pe=null,$Pluse=null,$Temperature=null,$Rr=null
             ,$Fbs=null,$Bmi=null,$Tg=null,$Hdl=null,$Glucurine=null,$Bun=null,$Creatinine=null
             ,$Ua=null,$Hba1c=null,$Tc=null,$Ldl=null,$Ast=null,$Alt=null,$Cholesterol=null
             ,$Gfr_ckd=null,$Hct_cbc=null,$Wbc_count_cbc=null,$Eo_cbc=null,$Urine_proteine_ua=null,$Urine_gluose_ua=null
             ,$Rbc_ua=null,$Wbc_ua=null,$Parasite=null,$Occountblood=null,$Dx_doctor=null
-            ,$Dname=null,$ic_confirm=null,$ic_insys=null)
+            ,$Uric=null,$Dname=null,$ic_confirm=null,$ic_insys=null)
         {
         
         $sys = new \frontend\modules\bkhealth\models\Insys();
         
         $sys->Vstdate = $Vstdate;
+        $sys->Cid = $Cid;
         $sys->Vn = $Vn;
         $sys->Hn = $Hn;
         $sys->Pt = $Pt;
@@ -118,6 +123,7 @@ group by v.vn order by v.vn desc limit 30";
         $sys->Bw = $Bw;
         $sys->Waist = $Waist;
         $sys->Cc = $Cc;
+        $sys->Bp = $Bp;
         $sys->Bpd = $Bpd;
         $sys->Bps = $Bps; 
         $sys->Drinking_type_id =$Drinking_type_id;
@@ -150,7 +156,8 @@ group by v.vn order by v.vn desc limit 30";
         $sys->Rbc_ua = $Rbc_ua;
         $sys->Wbc_ua = $Wbc_ua;
         $sys->Parasite = $Parasite;
-        $sys->Occountblood = $Occountblood;        
+        $sys->Occountblood = $Occountblood; 
+        $sys->Uric = $Uric;
         $sys->Dx_doctor = $Dx_doctor;
         $sys->Dname = $Dname;        
         $sys->ic_confirm = 1;
